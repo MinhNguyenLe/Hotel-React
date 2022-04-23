@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
+import "./bootstrap.min.css";
+import "./bootstrap-icons.css";
+
 import BookingSteps from './components/BookingSteps/index';
 import Confirmation from './components/Confirmation/index';
 import NotFound from './components/NotFound/index';
@@ -19,20 +22,25 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
+      <BookingRoutes path="/" exact component={BookingSteps} />
       <Switch>
-        <BookingRoutes path="/" exact component={BookingSteps} />
         <Route path="/confirmation">
           <DefaultLayout>
             <Confirmation />
           </DefaultLayout>
         </Route>
-        <Route path="/hotels/:country/:locale/:currency">
+        <Route exact path="/hotels" >
           <DefaultLayout>
             <Confirmation />
           </DefaultLayout>
         </Route>
-        <Route exact path="/h" >
+        <Route exact path="/hotels/:country/:locale/:currency">
+          <DefaultLayout>
+            <Confirmation />
+          </DefaultLayout>
+        </Route>
+        <Route path="/b/a">
           <DefaultLayout>
             <Confirmation />
           </DefaultLayout>
@@ -43,7 +51,7 @@ function App() {
           </DefaultLayout>
         </Route>
       </Switch>
-    </Router>
+    </>
   );
 }
 
