@@ -1,26 +1,22 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { SearchContext } from '../../store/SearchContext';
+import React, { useState, useEffect } from 'react';
 import Room from '../Room/index';
 
 function Rooms() {
-    const [data] = useContext(SearchContext);
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
         fetch('./rooms.json')
             .then(res => res.json())
             .then(res => {
-                let bySpace = res.filter(r => r.capacity >= parseInt(data.adults) + parseInt(data.children))
+                let bySpace = res.filter(r => r.capacity >= parseInt(2) + parseInt(0))
                 setRooms(bySpace);
             })
             .catch(err => console.log(err));
-    }, [data]);
-
-    if (data.step !== 1) return null;
+    }, []);
 
     return (
         <section>
-            {rooms && rooms.map((room, i) => <Room key={i} info={room} selected={data.room.id === room.id} />)}
+            {rooms && rooms.map((room, i) => <Room key={i} info={room} selected={false} />)}
         </section>
     )
 }

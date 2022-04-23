@@ -27,6 +27,16 @@ function App() {
             <Confirmation />
           </DefaultLayout>
         </Route>
+        <Route path="/hotels/:country/:locale/:currency">
+          <DefaultLayout>
+            <Confirmation />
+          </DefaultLayout>
+        </Route>
+        <Route exact path="/h" >
+          <DefaultLayout>
+            <Confirmation />
+          </DefaultLayout>
+        </Route>
         <Route>
           <DefaultLayout>
             <NotFound />

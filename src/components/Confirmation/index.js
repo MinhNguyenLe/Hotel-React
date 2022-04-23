@@ -1,16 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { SearchContext } from '../../store/SearchContext';
 
 function Confirmation() {
-    const [data, dispatch] = useContext(SearchContext);
-    const { step, finished } = data;
     let history = useHistory();
-
-    if (step < 4 && !finished) {
-        history.push('/');
-        return null;
-    }
 
     return (
         <div className='vh-100 d-flex justify-content-center flex-column text-center dark-blue'>
