@@ -27,13 +27,7 @@ function Header() {
                         Rooms
                     </NavLink>
                     <NavLink to='/'>
-                        Restaurant
-                    </NavLink>
-                    <NavLink to='/'>
                         <img src='/images/logo.png' className='logo' alt='Cocos' />
-                    </NavLink>
-                    <NavLink to='/'>
-                        Weddings
                     </NavLink>
                     <NavLink to='/'>
                         Membership
