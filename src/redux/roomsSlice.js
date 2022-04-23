@@ -5,7 +5,6 @@ const roomsReducer = createSlice({
   initialState: [],
   reducers: {
     addRoom(state, action) {
-      console.log(action.payload)
       state.push({
         ...action.payload
       })

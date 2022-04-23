@@ -19,12 +19,9 @@ function App() {
   const state = useSelector(state => state)
 
   useEffect(() => {
-    propertiesGetDetails().then(function (response) {
+    propertiesGetDetails().then((response) => {
       dispatch(addRoom(response.data))
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
+    }).catch((err) => console.log(err))
   }, []);
 
   useEffect(() => {
