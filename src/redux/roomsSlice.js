@@ -4,15 +4,14 @@ const roomsReducer = createSlice({
   name: 'rooms',
   initialState: [],
   reducers: {
-    todoAdded(state, action) {
+    addRoom(state, action) {
+      console.log(action.payload)
       state.push({
-        id: action.payload.id,
-        text: action.payload.text,
-        completed: false
+        ...action.payload
       })
     },
   }
 })
 
-export const { todoAdded } = roomsReducer.actions
+export const { addRoom } = roomsReducer.actions
 export default roomsReducer.reducer

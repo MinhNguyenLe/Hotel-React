@@ -9,16 +9,27 @@ import NotFound from './components/NotFound/index';
 import DefaultLayout from './layouts/default/index';
 import BookingRoutes from './routes/booking-routes';
 
-// import { getMetaData } from "config/axios"
+import { propertiesGetDetails } from "config/axios"
+
+import { useSelector, useDispatch } from "react-redux"
+import { addRoom } from "redux/rootAction"
 
 function App() {
-  // useEffect(() => {
-  //   getMetaData().then(function (response) {
-  //     console.log(response.data);
-  //   }).catch(function (error) {
-  //     console.error(error);
-  //   });
-  // }, []);
+  const dispatch = useDispatch()
+  const state = useSelector(state => state)
+
+  useEffect(() => {
+    propertiesGetDetails().then(function (response) {
+      dispatch(addRoom(response.data))
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log("state in redux", state)
+  }, [state]);
 
   return (
     <>
