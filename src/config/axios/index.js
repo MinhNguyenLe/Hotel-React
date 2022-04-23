@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const xRapidAPIHostPriceline = 'priceline-com.p.rapidapi.com'
 const xRapidAPIHostHotels4 = 'hotels4.p.rapidapi.com'
-const xRapidAPIHostLeejaew = 'leejaew-hotels-in-singapore-v1.p.rapidapi.com'
+const urlHotels4 = 'https://hotels4.p.rapidapi.com/'
 
 const xRapidAPIKey = 'ba8d6cbb50mshfad1812a9aa6a3ap1cbb40jsn20457f3ee1b1'
 const header = {
@@ -10,86 +9,51 @@ const header = {
   'X-RapidAPI-Key': xRapidAPIKey
 }
 
-const urlPriceline = 'https://priceline-com.p.rapidapi.com/'
-const urlHotels4 = 'https://hotels4.p.rapidapi.com/'
-const urlLeejaew = 'https://leejaew-hotels-in-singapore-v1.p.rapidapi.com/'
+const idHotel = "634418464"
+const locale = "en_US"
+const currency = "USD"
 
-export const getMetaData = (params) => {
-  return axios.request({
-    method: 'GET',
-    url: urlHotels4 + 'get-meta-data',
-    params: params || {},
-    headers: header
-  })
-}
-
-export const locationsV2Search = (params) => {
-  // should params
-  return axios.request({
-    method: 'GET',
-    url: urlHotels4 + 'locations/v2/search',
-    params: params || {},
-    headers: header
-  })
-}
-
-
-export const locationsSearchDeprecated = (params) => {
-  // should params
-  return axios.request({
-    method: 'GET',
-    url: urlHotels4 + 'locations/search',
-    params: params || {},
-    headers: header
-  })
-}
-
-export const propertiesList = (params) => {
-  // should params
-  return axios.request({
-    method: 'GET',
-    url: urlHotels4 + 'properties/list',
-    params: params || {},
-    headers: header
-  })
-}
-
-export const propertiesGetDetails = (params) => {
-  // should params
+export const propertiesGetDetails = () => {
   return axios.request({
     method: 'GET',
     url: urlHotels4 + 'properties/get-details',
-    params: params || {},
+    params: {
+      id: idHotel,
+      checkIn: '2020-01-08',
+      checkOut: '2022-01-15',
+      adults1: '1',
+      currency: currency,
+      locale: locale
+    },
     headers: header
   })
 }
 
-export const propertiesGetHotelPhotos = (params) => {
-  // should params
+export const propertiesGetHotelPhotos = () => {
   return axios.request({
     method: 'GET',
     url: urlHotels4 + 'properties/get-hotel-photos',
-    params: params || {},
+    params: {
+      id: idHotel
+    },
     headers: header
   })
 }
 
-export const reviewsList = (params) => {
-  // should params
+export const reviewsList = () => {
   return axios.request({
     method: 'GET',
     url: urlHotels4 + 'reviews/list',
-    params: params || {},
+    params: { id: idHotel, page: '5', loc: locale },
     headers: header
   })
 }
 
-export const reviewsV2List = (params) => {
-  // should params
+export const reviewsV2List = () => {
   return axios.request({
     method: 'GET',
     url: urlHotels4 + 'reviews/v2/list',
-    params: params || {},
+    params: { hotelId: idHotel, reviewOrder: 'date_newest_first', tripTypeFilter: 'all' },
     headers: header
   })
 }
