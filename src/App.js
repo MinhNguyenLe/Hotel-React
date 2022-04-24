@@ -10,19 +10,28 @@ import BookingRoutes from './routes/booking-routes';
 
 import Home from "pages/Home"
 
-import { propertiesGetDetails } from "config/axios"
+import { propertiesGetDetails, propertiesGetHotelPhotos } from "config/axios"
 
 import { useSelector, useDispatch } from "react-redux"
-import { addRoom } from "redux/rootAction"
+import { setDefaultHotelInformation, setListImages, setDefaultData } from "redux/rootActions"
+
+import { listImagesHotel, listRoomImages } from "utils"
 
 function App() {
   const dispatch = useDispatch()
   const state = useSelector(state => state)
 
   useEffect(() => {
-    propertiesGetDetails().then((response) => {
-      dispatch(addRoom(response.data))
-    }).catch((err) => console.log(err))
+    Promise.all([
+      propertiesGetDetails(),
+      propertiesGetHotelPhotos()
+    ]).then(([propertiesGetDetails, propertiesGetHotelPhotos]) => {
+      dispatch(setDefaultHotelInformation(propertiesGetDetails.data))
+
+      dispatch(setListImages(listImagesHotel(propertiesGetHotelPhotos.data.hotelImages)))
+
+      dispatch(setDefaultData(listRoomImages(propertiesGetHotelPhotos.data.roomImages, propertiesGetDetails.data.data.body.propertyDescription.roomTypeNames)))
+    }).catch(err => console.log(err))
   }, []);
 
   useEffect(() => {

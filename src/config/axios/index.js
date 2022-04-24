@@ -9,8 +9,8 @@ const header = {
   'X-RapidAPI-Key': xRapidAPIKey
 }
 
-const idHotel = "634418464"
-const locale = "en_US"
+const idHotel = "1434013472"
+const locale = "vi_VN"
 const currency = "USD"
 
 export const propertiesGetDetails = () => {
