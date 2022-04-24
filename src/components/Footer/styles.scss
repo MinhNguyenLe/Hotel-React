@@ -1,4 +1,4 @@
-@import '../../assets/css/variables';
+@import 'assets/styles/variables';
 
 .footer {
   flex-wrap: wrap;
@@ -7,8 +7,9 @@
 
   li {
     padding: 0 10px;
+
     &:nth-child(5) {
-        flex-grow: 1;
+      flex-grow: 1;
     }
   }
 
@@ -23,21 +24,24 @@
 
 @media only screen and (max-width: 992px) {
   .footer {
-      li {
-          &:first-child {
-            order: -2;
-            flex-basis: 50%;
-          }
-          &:nth-child(5) {
-            flex-grow: 0;
-          }
-          &:last-child {
-            order: -1;
-            flex-basis: 50%;
-            .ico {
-                float: right;
-            }
-          }
+    li {
+      &:first-child {
+        order: -2;
+        flex-basis: 50%;
       }
+
+      &:nth-child(5) {
+        flex-grow: 0;
+      }
+
+      &:last-child {
+        order: -1;
+        flex-basis: 50%;
+
+        .ico {
+          float: right;
+        }
+      }
+    }
   }
 }

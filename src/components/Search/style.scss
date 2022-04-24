@@ -1,4 +1,4 @@
-@import '../../assets/css/variables';
+@import 'assets/styles/variables';
 
 .search {
   margin-top: 70px;
@@ -12,7 +12,7 @@
   align-items: center;
   flex-wrap: wrap;
 
-  > * {
+  >* {
     margin: 0 15px;
   }
 }
@@ -68,6 +68,7 @@
 .react-datepicker__day--keyboard-selected {
   background-color: inherit;
   color: inherit;
+
   &:hover {
     background-color: inherit;
   }
@@ -80,9 +81,11 @@
 @media only screen and (max-width: 567px) {
   .search-content {
     flex-direction: column;
-    > * {
+
+    >* {
       margin: 10px 5px;
     }
+
     .react-datepicker-wrapper,
     .form-item,
     .btn {

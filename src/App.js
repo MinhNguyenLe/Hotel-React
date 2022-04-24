@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.scss';
-import "./bootstrap.min.css";
 
 import BookingSteps from './components/BookingSteps/index';
 import Confirmation from './components/Confirmation/index';
 import NotFound from './components/NotFound/index';
 import DefaultLayout from './layouts/default/index';
 import BookingRoutes from './routes/booking-routes';
+
+import Home from "pages/Home"
 
 import { propertiesGetDetails } from "config/axios"
 
@@ -30,8 +31,13 @@ function App() {
 
   return (
     <>
-      <BookingRoutes path="/" exact component={BookingSteps} />
       <Switch>
+        <BookingRoutes path="/home" exact component={BookingSteps} />
+        <Route path="/" exact>
+          <DefaultLayout>
+            <Home />
+          </DefaultLayout>
+        </Route>
         <Route path="/confirmation">
           <DefaultLayout>
             <Confirmation />
