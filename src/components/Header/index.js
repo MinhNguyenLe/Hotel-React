@@ -21,11 +21,7 @@ function Header() {
                 </NavLink>
                 <div className={`menu ${showClass}`}>
                     <NavLink to='/' exact>
-<<<<<<< HEAD
                         Information Hotel
-=======
-                        Home
->>>>>>> e8906ff4e86f4bb96e9e8674b4b10bfd823cb663
                     </NavLink>
                     <NavLink to='/'>
                         Rooms
