@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import Activities from './../Activities/index';
+>>>>>>> e8906ff4e86f4bb96e9e8674b4b10bfd823cb663
 import Register from './../Register/index';
 import Rooms from './../Rooms/index';
 
@@ -11,6 +15,10 @@ function BookingSteps() {
                 <img src={`/images/book-steps-1.png`} alt='' className='booking-step' />
             </section>
             <Rooms />
+<<<<<<< HEAD
+=======
+            <Activities />
+>>>>>>> e8906ff4e86f4bb96e9e8674b4b10bfd823cb663
             <Register />
         </>
     )
