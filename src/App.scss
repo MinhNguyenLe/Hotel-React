@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+@import 'assets/styles/variables.scss';
+@import 'assets/styles/reset.scss';
+
+@import 'assets/styles/index.scss';
+@import 'assets/styles/bootstrap.scss';
+
+.dark-blue {
+  color: $color-blue-2;
+}
+
+.container {
+  a {
+    color: $color-blue-2;
+  }
+}
