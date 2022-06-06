@@ -3,7 +3,9 @@ import axios from "axios";
 const xRapidAPIHostHotels4 = 'hotels4.p.rapidapi.com'
 const urlHotels4 = 'https://hotels4.p.rapidapi.com/'
 
-const xRapidAPIKey = 'ba8d6cbb50mshfad1812a9aa6a3ap1cbb40jsn20457f3ee1b1'
+// update free account monthly
+const xRapidAPIKey = '750d144acamsh38831a4cdb22dc2p181280jsn1b5952ddd1fa'
+
 const header = {
   'X-RapidAPI-Host': xRapidAPIHostHotels4,
   'X-RapidAPI-Key': xRapidAPIKey

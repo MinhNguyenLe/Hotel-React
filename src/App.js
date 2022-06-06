@@ -26,10 +26,13 @@ function App() {
       propertiesGetDetails(),
       propertiesGetHotelPhotos()
     ]).then(([propertiesGetDetails, propertiesGetHotelPhotos]) => {
+      //hotel
       dispatch(setDefaultHotelInformation(propertiesGetDetails.data))
 
+      // images
       dispatch(setListImages(listImagesHotel(propertiesGetHotelPhotos.data.hotelImages)))
 
+      // rooms
       dispatch(setDefaultData(listRoomImages(propertiesGetHotelPhotos.data.roomImages, propertiesGetDetails.data.data.body.propertyDescription.roomTypeNames)))
     }).catch(err => console.log(err))
   }, []);
