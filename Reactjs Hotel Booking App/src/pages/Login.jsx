@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      'url(https://binbadecor.com.vn/wp-content/uploads/2022/03/thiet-ke-shop-quan-ao-2.jpg)',
+      'url(https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light'

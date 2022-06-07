@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { loginReducer } from './login';
-import { registerReducer } from './register';
+import loginReducer from './loginSlice';
+import logoutReducer from './logoutSlice';
 
 const store = configureStore({
   reducer: {
     logic: loginReducer,
-    register: registerReducer,
+    logout: logoutReducer,
   },
 });
 

@@ -13,8 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useHistory } from 'react-router-dom';
-// import BackDrop from '../../Components/UI/BackDrop/BackDrop';
-import axios from 'axios';
+// import axios from 'axios';
+import BackDrop from '../components/BackDrop/BackDrop';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionsLogout } from '../store/logoutSlice';
 
 function Copyright() {
   return (
@@ -55,94 +57,86 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Register() {
   const classes = useStyles();
-  //   const [openBackDrop, setOpenBackDrop] = useState(false);
-  //   const fullName = useSelector((state) => state.logout.fullName);
-  //   const email = useSelector((state) => state.logout.email);
-  //   const password = useSelector((state) => state.logout.password);
-  //   const errorEmptyFullName = useSelector(
-  //     (state) => state.logout.errorEmptyFullName
-  //   );
-  //   const errorEmptyEmail = useSelector((state) => state.logout.errorEmptyEmail);
-  //   const errorEmptyPassword = useSelector(
-  //     (state) => state.logout.errorEmptyPassword
-  //   );
-  //   const errorFullName = useSelector((state) => state.logout.errorFullName);
-  //   const errorEmail = useSelector((state) => state.logout.errorEmail);
-  //   const errorPassword = useSelector((state) => state.logout.errorPassword);
+  const [openBackDrop, setOpenBackDrop] = useState(false);
+  const fullName = useSelector((state) => state.logout.fullName);
+  const email = useSelector((state) => state.logout.email);
+  const password = useSelector((state) => state.logout.password);
+  const errorEmptyFullName = useSelector(
+    (state) => state.logout.errorEmptyFullName
+  );
+  const errorEmptyEmail = useSelector((state) => state.logout.errorEmptyEmail);
+  const errorEmptyPassword = useSelector(
+    (state) => state.logout.errorEmptyPassword
+  );
+  const errorFullName = useSelector((state) => state.logout.errorFullName);
+  const errorEmail = useSelector((state) => state.logout.errorEmail);
+  const errorPassword = useSelector((state) => state.logout.errorPassword);
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   let history = useHistory();
 
   const fullNameChangeHandler = (item) => {
-    // dispatch(actionsLogout.fullNameChanged(item));
+    dispatch(actionsLogout.fullNameChanged(item));
   };
 
   const emailChangeHandler = (item) => {
-    // dispatch(actionsLogout.emailChanged(item));
+    dispatch(actionsLogout.emailChanged(item));
   };
 
   const passwordChangeHandler = (item) => {
-    // dispatch(actionsLogout.passwordChanged(item));
+    dispatch(actionsLogout.passwordChanged(item));
   };
 
   const handleOpen = () => {
-    // setOpenBackDrop(true);
+    setOpenBackDrop(true);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // const validateFullName = fullName.length > 6;
+    const validateFullName = fullName.length > 6;
 
-    // const validateEmail = (email) => {
-    //   return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    //     email
-    //   );
-    // };
+    const validateEmail = (email) => {
+      return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+      );
+    };
 
-    // const validatePassword = password.length > 6;
+    const validatePassword = password.length > 6;
 
-    // if (fullName === '') {
-    //   dispatch(actionsLogout.setErrorEmptyFullName());
-    // } else if (!validateFullName) dispatch(actionsLogout.setErrorFullName());
+    if (fullName === '') {
+      dispatch(actionsLogout.setErrorEmptyFullName());
+    } else if (!validateFullName) dispatch(actionsLogout.setErrorFullName());
 
-    // if (email === '') {
-    //   dispatch(actionsLogout.setErrorEmptyEmail());
-    // } else if (!validateEmail(email)) dispatch(actionsLogout.setErrorEmail());
+    if (email === '') {
+      dispatch(actionsLogout.setErrorEmptyEmail());
+    } else if (!validateEmail(email)) dispatch(actionsLogout.setErrorEmail());
 
-    // if (password === '') {
-    //   dispatch(actionsLogout.setErrorEmptyPassword());
-    // } else if (!validatePassword) {
-    //   dispatch(actionsLogout.setErrorPassword());
-    // }
+    if (password === '') {
+      dispatch(actionsLogout.setErrorEmptyPassword());
+    } else if (!validatePassword) {
+      dispatch(actionsLogout.setErrorPassword());
+    }
 
-    // if (
-    //   validateFullName &&
-    //   validateEmail(email) &&
-    //   validatePassword &&
-    //   fullName !== '' &&
-    //   password !== '' &&
-    //   email !== ''
-    // ) {
-    //   handleOpen();
-    //   setTimeout(() => {
-    //     axios.post(
-    //       `https://backendfashionstore.azurewebsites.net/api/Users/Register?userName=${fullName}&userEmail=${email}&userPassword=${password}`,
-    //       {
-    //         userEmail: email,
-    //         userName: fullName,
-    //         userPassword: password,
-    //       }
-    //     );
-    //     history.push('/login');
-    //     dispatch(actionsLogout.clearLogout());
-    //   }, 1500);
-    // }
+    if (
+      validateFullName &&
+      validateEmail(email) &&
+      validatePassword &&
+      fullName !== '' &&
+      password !== '' &&
+      email !== ''
+    ) {
+      handleOpen();
+      setTimeout(() => {
+        history.push('/login');
+        dispatch(actionsLogout.clearLogout());
+      }, 1500);
+    }
   };
 
   return (
     <>
-      {/* <BackDrop classes={classes} openBackDrop={openBackDrop} /> */}
+      <BackDrop classes={classes} openBackDrop={openBackDrop} />
 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -157,7 +151,7 @@ export default function Register() {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
-                  //   error={errorFullName || errorEmptyFullName}
+                  error={errorFullName || errorEmptyFullName}
                   variant="outlined"
                   required
                   fullWidth
@@ -165,17 +159,17 @@ export default function Register() {
                   label="Họ và Tên"
                   name="fullName"
                   autoComplete="fname"
-                  //   value={fullName}
-                  //   onChange={(e) => fullNameChangeHandler(e.target.value)}
-                  //   helperText={
-                  //     (errorEmptyFullName && 'Bạn chưa nhập Họ và Tên') ||
-                  //     (errorFullName && 'Họ và tên phải lớn hơn 6 kí tự')
-                  //   }
+                  value={fullName}
+                  onChange={(e) => fullNameChangeHandler(e.target.value)}
+                  helperText={
+                    (errorEmptyFullName && 'Bạn chưa nhập Họ và Tên') ||
+                    (errorFullName && 'Họ và tên phải lớn hơn 6 kí tự')
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  //   error={errorEmptyEmail || errorEmail}
+                  error={errorEmptyEmail || errorEmail}
                   variant="outlined"
                   required
                   fullWidth
@@ -183,17 +177,17 @@ export default function Register() {
                   label="Địa chỉ Email"
                   name="email"
                   autoComplete="email"
-                  //   value={email}
-                  //   onChange={(e) => emailChangeHandler(e.target.value)}
-                  //   helperText={
-                  //     (errorEmptyEmail && 'Bạn chưa nhập Email') ||
-                  //     (errorEmail && 'Email không hợp lệ !!!')
-                  //   }
+                  value={email}
+                  onChange={(e) => emailChangeHandler(e.target.value)}
+                  helperText={
+                    (errorEmptyEmail && 'Bạn chưa nhập Email') ||
+                    (errorEmail && 'Email không hợp lệ !!!')
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  //   error={errorPassword || errorEmptyPassword}
+                  error={errorPassword || errorEmptyPassword}
                   variant="outlined"
                   required
                   fullWidth
@@ -202,12 +196,12 @@ export default function Register() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
-                  //   value={password}
-                  //   onChange={(e) => passwordChangeHandler(e.target.value)}
-                  //   helperText={
-                  //     (errorEmptyPassword && 'Bạn chưa nhập Mật khẩu') ||
-                  //     (errorPassword && 'Mật khẩu phải lớn hơn 6 kí tự !!!')
-                  //   }
+                  value={password}
+                  onChange={(e) => passwordChangeHandler(e.target.value)}
+                  helperText={
+                    (errorEmptyPassword && 'Bạn chưa nhập Mật khẩu') ||
+                    (errorPassword && 'Mật khẩu phải lớn hơn 6 kí tự !!!')
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
