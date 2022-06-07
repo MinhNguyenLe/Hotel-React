@@ -15,7 +15,6 @@ const Register = () => {
     const newValue = { name: name, email: email, password: password, cpassword: cpassword }
 
     setRecValue([...recValue, newValue])
-    console.log(newValue)
 
     setName("")
     setEmail("")
@@ -36,12 +35,6 @@ const Register = () => {
                 </h3>
                 <h3>
                   Email : <p>{currentValue.email}</p>
-                </h3>
-                <h3>
-                  Password : <p>{currentValue.password}</p>
-                </h3>
-                <h3>
-                  Confirm Password : <p>{currentValue.cpassword}</p>
                 </h3>
               </div>
             </>

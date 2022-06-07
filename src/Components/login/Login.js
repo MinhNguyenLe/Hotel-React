@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import HeadTitle from "../../Common/HeadTitle/HeadTitle"
 import "./design.css"
+import { useHistory } from "react-router-dom";
 
 const mockAccount = {
   email: "minhlee@gmail.com",
@@ -9,20 +10,23 @@ const mockAccount = {
 }
 
 const Login = () => {
+  const history = useHistory();
+
   const [errLogin, setErrLogin] = useState(false)
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const [recValue, setRecValue] = useState([])
+  const [successful, setSuccessful] = useState(false)
+
   const submitForm = (e) => {
-    e.preventDefault()
-    const newValue = { email: email, password: password }
-
+    e.preventDefault();
     if (!(email !== mockAccount.email || password !== mockAccount.password)) {
-      setRecValue([...recValue, newValue])
-      console.log(newValue)
+      localStorage.setItem("account", JSON.stringify(mockAccount));
+      history.push("/");
+      window.location.reload();
 
+      setSuccessful(true)
       setEmail("")
       setPassword("")
     } else {
@@ -33,18 +37,14 @@ const Login = () => {
     <>
       <HeadTitle />
       <section className='show-data'>
-        {recValue.length ? recValue.map((cureentValue) => {
-          return (
-            <>
-              <div className='sign-box'>
-                <h1>Sign-In Successfully</h1>
-                <h3>
-                  Email : <p>{cureentValue.email}</p>
-                </h3>
-              </div>
-            </>
-          )
-        })
+        {successful ? <>
+          <div className='sign-box'>
+            <h1>Sign-In Successfully</h1>
+            <h3>
+              Email : <p>{email}</p>
+            </h3>
+          </div>
+        </>
           : (errLogin && (<>
             <div className='sign-box show-error'>
               <h1>Sign-In Failure: No account matched</h1>
@@ -59,7 +59,7 @@ const Login = () => {
         }
       </section>
       <section className='forms top'>
-        {!email ? <div className='container'>
+        <div className='container'>
           <div className='sign-box'>
             <p>Enter your e-mail and password below to log in to your account and use the benefits of our website.</p>
             <form action='' onSubmit={submitForm}>
@@ -84,14 +84,7 @@ const Login = () => {
               </p>
             </form>
           </div>
-        </div> :
-          (
-            <div className='sign-box'>
-              <p>Login successful with account : {email}.</p>
-              <Link to='/'>See some rooms in our hotel!</Link>
-            </div>
-          )
-        }
+        </div>
       </section>
     </>
   )
