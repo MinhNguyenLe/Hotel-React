@@ -18,6 +18,7 @@ import Contact from "./Components/Contact/Contact"
 import Footer from "./Common/footer/Footer"
 import Login from "./Components/login/Login"
 import Register from "./Components/login/Register"
+import Checkout from "./Components/Checkout/Checkout"
 /*-------------blog------------ */
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path='/blog' exact component={Blog} />
           <Route path='/blogsingle/:id' component={BlogSingle} />
           <Route path='/testimonial' component={Testimonial} />
+          <Route path='/checkout' component={Checkout} />
           <Route path='/contact' component={Contact} />
           <Route path='/sign-in' component={Login} />
           <Route path='/Register' component={Register} />
