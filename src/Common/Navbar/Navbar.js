@@ -22,6 +22,16 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to='/rooms' onClick={closeMobileMenu}>
+                List rooms
+              </Link>
+            </li>
+            <li>
+              <Link to='/checkout' onClick={closeMobileMenu}>
+                Checkout
+              </Link>
+            </li>
+            <li>
               <Link to='/about' onClick={closeMobileMenu}>
                 About us
               </Link>
