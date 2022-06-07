@@ -1,4 +1,4 @@
-import { formatBaseUrlFromAPI } from "utils"
+import { formatBaseUrlFromAPI } from "./formatBaseUrlFromAPI"
 
 export function listImagesHotel(arr) {
   return arr.map(image => formatBaseUrlFromAPI(image.baseUrl))

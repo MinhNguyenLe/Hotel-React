@@ -20,8 +20,36 @@ import Login from "./Components/login/Login"
 import Register from "./Components/login/Register"
 import Checkout from "./Components/Checkout/Checkout"
 /*-------------blog------------ */
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux"
+import { propertiesGetDetails, propertiesGetHotelPhotos } from "./config/axios"
+import { setDefaultHotelInformation, setListImages, setDefaultData } from "./redux/rootActions"
+import { listImagesHotel, listRoomImages } from "./utils"
 
 function App() {
+  const dispatch = useDispatch()
+  const state = useSelector(state => state)
+
+  useEffect(() => {
+    Promise.all([
+      propertiesGetDetails(),
+      propertiesGetHotelPhotos()
+    ]).then(([propertiesGetDetails, propertiesGetHotelPhotos]) => {
+      //hotel
+      dispatch(setDefaultHotelInformation(propertiesGetDetails.data))
+
+      // images
+      dispatch(setListImages(listImagesHotel(propertiesGetHotelPhotos.data.hotelImages)))
+
+      // rooms
+      dispatch(setDefaultData(listRoomImages(propertiesGetHotelPhotos.data.roomImages, propertiesGetDetails.data.data.body.propertyDescription.roomTypeNames)))
+    }).catch(err => console.log(err))
+  }, []);
+
+  useEffect(() => {
+    console.log("state in redux", state)
+  }, [state]);
+
   return (
     <>
       <Router>

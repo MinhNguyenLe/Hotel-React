@@ -2,5 +2,5 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src", "../src/redux"]
+  "include": ["src", "../src/redux", "../src/config", "../src/utils"]
 }
