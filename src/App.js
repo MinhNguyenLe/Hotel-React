@@ -36,6 +36,7 @@ function App() {
           <Route path='/blogsingle/:id' component={BlogSingle} />
           <Route path='/testimonial' component={Testimonial} />
           <Route path='/checkout' component={Checkout} />
+          <Route path='/rooms' component={Checkout} />
           <Route path='/contact' component={Contact} />
           <Route path='/sign-in' component={Login} />
           <Route path='/Register' component={Register} />
