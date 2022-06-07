@@ -32,6 +32,11 @@
   font-size: 13px;
 }
 
+.show-error h1 {
+  color: red !important;
+  margin: 0 0 20px 0;
+}
+
 /*----------show-data---------*/
 .show-data h1 {
   color: #31b675;
