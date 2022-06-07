@@ -25,6 +25,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { propertiesGetDetails, propertiesGetHotelPhotos } from "./config/axios"
 import { setDefaultHotelInformation, setListImages, setDefaultData } from "./redux/rootActions"
 import { listImagesHotel, listRoomImages } from "./utils"
+import Rooms from "./Components/Rooms"
 
 function App() {
   const dispatch = useDispatch()
@@ -64,7 +65,7 @@ function App() {
           <Route path='/blogsingle/:id' component={BlogSingle} />
           <Route path='/testimonial' component={Testimonial} />
           <Route path='/checkout' component={Checkout} />
-          <Route path='/rooms' component={Checkout} />
+          <Route path='/rooms' component={Rooms} />
           <Route path='/contact' component={Contact} />
           <Route path='/sign-in' component={Login} />
           <Route path='/Register' component={Register} />
