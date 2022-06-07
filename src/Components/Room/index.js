@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import { Link } from "react-router-dom"
 
 const discount = 10
 
@@ -10,7 +11,7 @@ function Room({ data, selected, overview }) {
                 data.images.map((image, index) => (
                     <div key={index} className={`card ${selected ? `card-active` : ``} flex flex-row pl-0`}>
                         <img src={image} alt={data.name} className='card-img' />
-                        <div>
+                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                             <h3>{data.name}</h3>
                             <p>{overview.title}</p>
                             {
@@ -35,6 +36,9 @@ function Room({ data, selected, overview }) {
                                     {!discount && <span>€ {(data.roomId / 1000000).toFixed(2)}</span>}
                                 </div>
                             </div>
+                            <Link to='/checkout'>
+                                <button className='primary-btn'>Choose this room</button>
+                            </Link>
                         </div>
                     </div>
                 ))
