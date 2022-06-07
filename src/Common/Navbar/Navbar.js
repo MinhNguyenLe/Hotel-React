@@ -64,7 +64,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to='/testimonial' onClick={closeMobileMenu}>
+              <Link to='/reviewer' onClick={closeMobileMenu}>
                 Reviewer
               </Link>
             </li>

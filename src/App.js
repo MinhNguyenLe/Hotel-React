@@ -13,7 +13,7 @@ import SinglePage from "./SinglePage/SinglePage"
 /*-------------blog------------ */
 import Blog from "./Components/Blog/Blog"
 import BlogSingle from "./Components/Blog/blog-single-page/BlogSingle"
-import Testimonial from "./Components/Testimonial/Testimonial"
+import Reviewer from "./Components/Reviewer/Reviewer"
 import Contact from "./Components/Contact/Contact"
 import Footer from "./Common/footer/Footer"
 import Login from "./Components/login/Login"
@@ -26,6 +26,7 @@ import { propertiesGetDetails, propertiesGetHotelPhotos } from "./config/axios"
 import { setDefaultHotelInformation, setListImages, setDefaultData } from "./redux/rootActions"
 import { listImagesHotel, listRoomImages } from "./utils"
 import Rooms from "./Components/Rooms"
+import ReviewForm from "Components/ReivewForm/ReviewForm"
 
 function App() {
   const dispatch = useDispatch()
@@ -63,7 +64,8 @@ function App() {
           <Route path='/singlepage/:id' component={SinglePage} />
           <Route path='/blog' exact component={Blog} />
           <Route path='/blogsingle/:id' component={BlogSingle} />
-          <Route path='/testimonial' component={Testimonial} />
+          <Route path='/reviewer' component={Reviewer} />
+          <Route path='/create-review' component={ReviewForm} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/rooms' component={Rooms} />
           <Route path='/contact' component={Contact} />
