@@ -15,7 +15,7 @@ nav ul li {
 
 nav ul li a {
   color: #fff;
-  font-weight: 100;
+  font-weight: 500;
   font-size: 15px;
   letter-spacing: 1px;
   transition: all 0.2s ease-out;
@@ -40,7 +40,7 @@ nav i {
 }
 
 .login-area a {
-  font-weight: 100;
+  font-weight: 500;
   opacity: 0.8;
   font-size: 13px;
   color: #fff;
