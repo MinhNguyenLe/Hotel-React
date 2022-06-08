@@ -40,7 +40,7 @@ const SinglePage = () => {
                   <p>{item.sidepara}</p>
                   <p>{item.sidepara}</p>
                 </div>
-                <h1>Whta is the {item.title} City ?</h1>
+                <h1>What is the {item.title} City ?</h1>
                 <p>{item.desc}</p>
 
                 <div className='image grid1 '>

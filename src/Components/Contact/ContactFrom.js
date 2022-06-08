@@ -80,13 +80,13 @@ const ContactFrom = () => {
 
           <div className='side-content'>
             <h3>Visit our location</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit amet consectetur.</p>
+            <p>D. Tran Nao & D. No. 11 Quarter 2, An Khanh, District 2, Ho Chi Minh City</p>
             <br />
 
             <h3>Message us</h3>
             <span>info@exampal.com</span>
             <br />
-            <span>+01 123 456 789</span>
+            <span>+84 987644524 </span>
             <br />
 
             <div className='icon'>

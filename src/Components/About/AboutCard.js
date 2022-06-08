@@ -10,8 +10,8 @@ const AboutCard = () => {
           <h1>
             We <span>provide Solution</span> to grow your business
           </h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit amet consectetur piscing elit amet consectetur adipiscing elit sed et eletum nulla eu placerat felis etiam tincidunt orci lacus id varius dolor fermum sit amet.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit amet consectetur piscing elit amet consectetur adipiscing elit sed et eletum nulla eu placerat felis etiam tincidunt orci lacus id varius dolor fermum sit amet.</p>
+          <p>Since opening its doors in 2001, The Peninsula Chicago has been awarded numerous accolades including prestigious Forbes Five Star and AAA Five Diamond awards every year.</p>
+          <p>Kindly check the terms and conditions at the time of booking or consult with our reservations agent or your preferred travel advisor.</p>
           <button className='secondary-btn'>
             Explore More <i className='fas fa-long-arrow-alt-right'></i>
           </button>

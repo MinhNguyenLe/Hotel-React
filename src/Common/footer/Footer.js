@@ -9,9 +9,9 @@ const Footer = () => {
         <div className='container grid'>
           <div className='box'>
             <h2>ABOUT US</h2>
-            <p>Lorem ipsum dolor sit amet sectetur adipiscing elit amet consectetur scing elit amet consectetur adipiscing elit sed et eletum.</p>
+            <p>2019 -2020 Only Brand to Achieve Forbes Travel Guide Five-Star Status Across Entire Portfolio.</p>
             <br />
-            <p>Lorem ipsum dolor sit amet sectetur adipiscing elit amet consectetur scing elit amet.</p>
+            <p>2014 - 2020 World’s Best Awards Top Hotel Brands</p>
             <div className='icon flex_space'>
               <i className='fab fa-facebook-f'></i>
               <i className='fab fa-twitter'></i>
@@ -53,26 +53,26 @@ const Footer = () => {
             <h2>RECENT POSTS</h2>
             <ul>
               <li>
-                <p>Lorem ipsum dolor sit amet sectetur adipiscing elit amet</p>
+                <p>Forbes Five Star Award 2002 - 2020</p>
                 <label className='fa fa-calendar-alt'></label>
-                <span>01 Oct 2020</span>
+                <span>2003 - 2019</span>
               </li>
               <li>
-                <p>Lorem ipsum dolor sit amet sectetur adipiscing elit amet</p>
+                <p>AAA Five Diamond Award 2003 - 2019</p>
                 <label className='fa fa-calendar-alt'></label>
-                <span>01 Oct 2020</span>
+                <span>01 Oct  2002 - 2020</span>
               </li>
               <li>
-                <p>Lorem ipsum dolor sit amet sectetur adipiscing elit amet</p>
+                <p>Gold List 2018</p>
                 <label className='fa fa-calendar-alt'></label>
-                <span>01 Oct 2020</span>
+                <span>2018</span>
               </li>
             </ul>
           </div>
 
           <div className='box'>
-            <h2>NEWSLETTER</h2>
-            <p>Lorem ipsum dolor sit amet sectetur adipiscing elit amet</p>
+            <h2>NEWSLETTER #1 Top Luxury Hotel in the US </h2>
+            <p>TripAdvisor Travelers' Choice Awards 2019</p>
 
             <input type='text' name='' id='' />
             <input type='text' className='primary-btn' value='SUBSCRIBE' />

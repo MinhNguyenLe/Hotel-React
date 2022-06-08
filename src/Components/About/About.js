@@ -20,8 +20,8 @@ const About = () => {
             <h1>
               Our <span>Features</span>
             </h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit amet consectetur piscing elit amet consectetur adipiscing elit sed et eletum nulla eu placerat felis etiam tincidunt orci lacus id varius dolor fermum sit amet.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit amet consectetur piscing elit amet consectetur adipiscing elit sed et eletum nulla eu placerat felis etiam tincidunt orci lacus id varius dolor fermum sit amet.</p>
+            <p>Since opening its doors in 2001, The Peninsula Chicago has been awarded numerous accolades including prestigious Forbes Five Star and AAA Five Diamond awards every year.</p>
+            <p>The Peninsula Chicago inspires travelers to embark on a long weekend or weekday getaway with More Time…With Our Compliments, which offers a third night complimentary when booking a minimum stay of three consecutive nights. For added security and privacy</p>
             <button className='secondary-btn'>
               Explore More <i className='fas fa-long-arrow-alt-right'></i>
             </button>
