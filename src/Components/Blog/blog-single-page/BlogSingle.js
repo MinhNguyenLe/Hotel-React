@@ -43,7 +43,7 @@ const BlogSingle = () => {
 
             <article className='content flex_space'>
               <div className='main-content'>
-                <img src={item.images[1]} alt='' />
+                <img src={item.images[Math.floor(Math.random() * 5)]} alt='' />
 
                 <div className='category flex_space'>
                   <span>{mockInfo.date}</span>
@@ -71,14 +71,10 @@ const BlogSingle = () => {
                   <h1>Categories</h1>
                   <hr />
                   <ul>
-                    {BlogData.map((item) => {
-                      return (
-                        <li>
-                          <i className='far fa-play-circle'></i>
-                          {mockInfo.catgeory}
-                        </li>
-                      )
-                    })}
+                    <li>
+                      <i className='far fa-play-circle'></i>
+                      {mockInfo.catgeory}
+                    </li>
                   </ul>
                 </div>
               </div>

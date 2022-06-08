@@ -30,6 +30,9 @@ export default function PaymentForm() {
             fullWidth
             autoComplete="cc-number"
             variant="standard"
+            onChange={(e) => {
+              localStorage.setItem("cardNumber", e.target.value)
+            }}
           />
         </Grid>
         <Grid item xs={12} md={6}>
