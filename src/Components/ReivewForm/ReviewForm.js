@@ -10,14 +10,30 @@ export default function ReviewForm() {
   const [desc, setDesc] = React.useState("")
 
   const backToReview = () => {
-    localStorage.setItem("review", JSON.stringify({
-      id: 10,
-      desc: desc,
-      name: name,
-      profile: "/images/profile/profile4.jpg",
-      post: role,
+    const oldReview = JSON.parse(localStorage.getItem("review"))
 
-    }));
+    const newListReviews = oldReview ?
+      [
+        ...oldReview,
+        {
+          id: Date.now(),
+          desc: desc,
+          name: name,
+          profile: "/images/profile/profile4.jpg",
+          post: role,
+        }
+      ]
+      :
+      [
+        {
+          id: Date.now(),
+          desc: desc,
+          name: name,
+          profile: "/images/profile/profile4.jpg",
+          post: role,
+        }
+      ];
+    localStorage.setItem("review", JSON.stringify(newListReviews));
 
     history.push("/reviewer");
     window.location.reload();
