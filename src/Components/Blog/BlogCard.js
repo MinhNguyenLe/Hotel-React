@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 
 const BlogCard = ({ item: { id, cover, title, desc, para, catgeory, date } }) => {
   return (
@@ -19,9 +18,9 @@ const BlogCard = ({ item: { id, cover, title, desc, para, catgeory, date } }) =>
           <p>{para}</p>
         </div>
 
-        <Link to={`/blogsingle/${id}`} className='blogItem-link'>
+        <div className='blogItem-link'>
           READ MORE <i className='fa fa-long-arrow-right'></i>
-        </Link>
+        </div>
       </div>
     </>
   )

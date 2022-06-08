@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import Data from "./Data"
+import { useHistory } from "react-router-dom";
 
 const Home = ({ slides }) => {
   const [current, setCurrent] = useState(0)
   const length = slides.length
+  const history = useHistory();
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1)
@@ -15,6 +17,10 @@ const Home = ({ slides }) => {
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null
+  }
+
+  const recommendRoom = () => {
+    history.push("/rooms");
   }
 
   return (
@@ -54,8 +60,8 @@ const Home = ({ slides }) => {
               <input type='number' placeholder='Children(0- 17)' />
             </div>
             <input type='number' placeholder='Rooms' />
-            <input type='Submit' value='Search' className='submit' />
           </form>
+          <button onClick={recommendRoom} className="primary-btn" style={{ width: '100%', marginTop: 20, padding: "20px 0" }}>Search</button>
         </div>
       </section>
     </>

@@ -9,7 +9,7 @@ function Rooms() {
 
     return (
         <section>
-            {rooms && rooms.length ? rooms.map((room, i) => <Room key={i} data={room} overview={overview[i]} selected={false} />) : "Loading"}
+            {rooms && rooms.length ? rooms.map((room, i) => <Room key={i} data={room} overview={overview[i]} selected={false} />) : <div style={{ marginLeft: 100, fontSize: 40 }}>Loading</div>}
         </section>
     )
 }

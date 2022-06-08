@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 const discount = 10
 
 function Room({ data, selected, overview }) {
+    console.log(data)
     return (
         <>
             {
@@ -36,8 +37,8 @@ function Room({ data, selected, overview }) {
                                     {!discount && <span>€ {(data.roomId / 1000000).toFixed(2)}</span>}
                                 </div>
                             </div>
-                            <Link to='/checkout'>
-                                <button className='primary-btn'>Choose this room</button>
+                            <Link to={`/room-detail/${data.roomId}`} className='blogItem-link'>
+                                READ MORE <i className='fa fa-long-arrow-right'></i>
                             </Link>
                         </div>
                     </div>

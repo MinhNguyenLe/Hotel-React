@@ -63,7 +63,7 @@ function App() {
           <Route path='/destinations' exact component={Destinations} />
           <Route path='/singlepage/:id' component={SinglePage} />
           <Route path='/blog' exact component={Blog} />
-          <Route path='/blogsingle/:id' component={BlogSingle} />
+          <Route path='/room-detail/:id' component={BlogSingle} />
           <Route path='/reviewer' component={Reviewer} />
           <Route path='/create-review' component={ReviewForm} />
           <Route path='/checkout' component={Checkout} />
