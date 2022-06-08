@@ -40,11 +40,11 @@
 
 .slide-form {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 10%;
   background-color: rgba(0, 0, 0, 0.7);
   width: 35%;
-  height: 74vh;
+  height: 40vh;
   border-radius: 5px;
   color: white;
 }

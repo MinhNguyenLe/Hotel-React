@@ -33,16 +33,6 @@
   font-size: 20px;
 }
 
-.aboutCard .image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 89.5%;
-  height: 49vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .aboutCard .image::before {
   content: "";
   position: absolute;
