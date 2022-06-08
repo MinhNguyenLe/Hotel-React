@@ -61,10 +61,10 @@ const SinglePage = () => {
                   </button>
                 </div>
 
-                <div className='box2'>
+                {/* <div className='box2'>
                   <p>{item.sidepara}</p>
                 </div>
-              </div>
+              </div> */}
               {/* --------- side-content--------- */}
             </article>
           </div>

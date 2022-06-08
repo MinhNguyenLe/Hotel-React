@@ -67,3 +67,8 @@ article .box2 p {
     flex-direction: column;
   }
 }
+.sang {
+  .single-page .flex {
+    flex-direction: column;
+  }
+}
