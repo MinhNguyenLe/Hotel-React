@@ -67,7 +67,7 @@ export default function Checkout() {
       cardNumber: localStorage.getItem("cardNumber")
     }]
 
-    localStorage.setItem("booked", oldBooked ? JSON.stringify([...oldBooked, booked]) : JSON.stringify(booked))
+    localStorage.setItem("booked", oldBooked ? JSON.stringify([...oldBooked, ...booked]) : JSON.stringify(booked))
 
     setActiveStep(activeStep + 1);
   }
