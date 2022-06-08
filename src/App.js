@@ -27,6 +27,7 @@ import { setDefaultHotelInformation, setListImages, setDefaultData } from "./red
 import { listImagesHotel, listRoomImages } from "./utils"
 import Rooms from "./Components/Rooms"
 import ReviewForm from "Components/ReivewForm/ReviewForm"
+import Profile from "Components/Profile/Profile"
 
 function App() {
   const dispatch = useDispatch()
@@ -71,7 +72,7 @@ function App() {
           <Route path='/contact' component={Contact} />
           <Route path='/sign-in' component={Login} />
           <Route path='/Register' component={Register} />
-          <Route path='/mypage' component={Contact} />
+          <Route path='/mypage' component={Profile} />
         </Switch>
         <Footer />
       </Router>
