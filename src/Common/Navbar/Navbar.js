@@ -39,11 +39,6 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to='/checkout' onClick={closeMobileMenu}>
-                Checkout
-              </Link>
-            </li>
-            <li>
               <Link to='/about' onClick={closeMobileMenu}>
                 About us
               </Link>
@@ -80,9 +75,9 @@ const Navbar = () => {
                 <button onClick={logout} style={{ background: "transparent", fontWeight: '500', border: "white", color: 'white' }} className='outline-btn'>Log out</button>
               </li>
               <li>
-                <Link to='/mypage'>
+                <a href='/mypage'>
                   <button className='primary-btn'>My profile</button>
-                </Link>
+                </a>
               </li>
             </div>
           </div>

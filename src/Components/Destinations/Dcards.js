@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const Cards = ({ item: { id, image, title, sidepara, desc, paraImage_one, paraImage_two } }) => {
   return (
     <>
-      <div className='items'>
+      <div className='items' style={{ maxWidth: 412 }}>
         <div className='img'>
           <img src={image} alt='Gallery Image' />
 

@@ -18,7 +18,6 @@ import Contact from "./Components/Contact/Contact"
 import Footer from "./Common/footer/Footer"
 import Login from "./Components/login/Login"
 import Register from "./Components/login/Register"
-import Checkout from "./Components/Checkout/Checkout"
 /*-------------blog------------ */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux"
@@ -67,7 +66,6 @@ function App() {
           <Route path='/room-detail/:id' component={BlogSingle} />
           <Route path='/reviewer' component={Reviewer} />
           <Route path='/create-review' component={ReviewForm} />
-          <Route path='/checkout' component={Checkout} />
           <Route path='/rooms' component={Rooms} />
           <Route path='/contact' component={Contact} />
           <Route path='/sign-in' component={Login} />
