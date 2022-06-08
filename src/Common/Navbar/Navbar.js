@@ -80,8 +80,8 @@ const Navbar = () => {
                 <button onClick={logout} style={{ background: "transparent", fontWeight: '500', border: "white", color: 'white' }} className='outline-btn'>Log out</button>
               </li>
               <li>
-                <Link to='/contact'>
-                  <button className='primary-btn'>Request a Quote</button>
+                <Link to='/mypage'>
+                  <button className='primary-btn'>My profile</button>
                 </Link>
               </li>
             </div>

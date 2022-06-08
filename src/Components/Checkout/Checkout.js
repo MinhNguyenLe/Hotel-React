@@ -57,6 +57,21 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+  const handleBooking = () => {
+    const oldBooked = JSON.parse(localStorage.getItem("booked"))
+
+    const booked = [{
+      ...JSON.parse(localStorage.getItem("infoBooking")),
+      name: localStorage.getItem("name"),
+      address: localStorage.getItem("address"),
+      cardNumber: localStorage.getItem("cardNumber")
+    }]
+
+    localStorage.setItem("booked", oldBooked ? JSON.stringify([...oldBooked, booked]) : JSON.stringify(booked))
+
+    setActiveStep(activeStep + 1);
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -108,13 +123,23 @@ export default function Checkout() {
                     </Button>
                   )}
 
-                  <Button
-                    variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 3, ml: 1 }}
-                  >
-                    {activeStep === steps.length - 1 ? 'Place booking' : 'Next'}
-                  </Button>
+                  {
+                    activeStep === steps.length - 1 ? (
+                      <Button
+                        variant="contained"
+                        onClick={handleBooking}
+                        sx={{ mt: 3, ml: 1 }}
+                      >
+                        Place booking
+                      </Button>
+                    ) : <Button
+                      variant="contained"
+                      onClick={handleNext}
+                      sx={{ mt: 3, ml: 1 }}
+                    >
+                      Next
+                    </Button>
+                  }
                 </Box>
               </React.Fragment>
             )}

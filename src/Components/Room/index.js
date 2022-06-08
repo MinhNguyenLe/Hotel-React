@@ -1,11 +1,13 @@
 import React from 'react';
 import './style.scss';
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 const discount = 10
 
 function Room({ data, selected, overview }) {
-    console.log(data)
+    const history = useHistory();
+
     return (
         <>
             {
@@ -37,9 +39,16 @@ function Room({ data, selected, overview }) {
                                     {!discount && <span>€ {(data.roomId / 1000000).toFixed(2)}</span>}
                                 </div>
                             </div>
-                            <Link to={`/room-detail/${data.roomId}`} className='blogItem-link'>
+                            <button onClick={() => {
+                                localStorage.setItem("infoBooking", JSON.stringify({
+                                    price: (data.roomId / 1000000 - discount / 100 * data.roomId / 1000000).toFixed(2),
+                                    roomName: data.name
+                                }))
+                                history.push(`/room-detail/${data.roomId}`);
+                                window.location.reload();
+                            }} className='primary-btn'>
                                 READ MORE <i className='fa fa-long-arrow-right'></i>
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 ))

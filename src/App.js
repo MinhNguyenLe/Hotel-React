@@ -71,6 +71,7 @@ function App() {
           <Route path='/contact' component={Contact} />
           <Route path='/sign-in' component={Login} />
           <Route path='/Register' component={Register} />
+          <Route path='/mypage' component={Contact} />
         </Switch>
         <Footer />
       </Router>
