@@ -69,7 +69,7 @@ const Sdata = [
     title: "New York",
     image: "/images/dest-6.jpg",
     desc: "The Peninsula Chicago is family-friendly, offering fascinating Peninsula Academy programs especially for children and tailoring stays to appeal to even the youngest of guests.",
-    sidepara: " so that you can spend more time luxuriating in relaxation or adventuring into the city..",
+    sidepara: " sss so that you can spend more time luxuriating in relaxation or adventuring into the city..",
   },
 ]
 
