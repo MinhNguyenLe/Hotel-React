@@ -81,7 +81,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .features .flex_space,
   .aboutCard {
     flex-direction: column;
@@ -104,4 +103,7 @@
   .aboutCard img {
     width: 100%;
   }
+}
+.aboutCard img {
+  width: 100%;
 }
