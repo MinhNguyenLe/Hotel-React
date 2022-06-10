@@ -52,8 +52,8 @@ const Home = ({ slides }) => {
           <form>
             <input type='text' placeholder='Seacrh City' />
             <div className='flex_space'>
-              <input type='date' placeholder='Check In' />
-              <input type='date' placeholder='Check Out' />
+              <input type='date' placeholder='Check In' onChange={(e) => localStorage.setItem("from", JSON.stringify(e.target.value))} />
+              <input type='date' placeholder='Check Out' onChange={(e) => localStorage.setItem("to", JSON.stringify(e.target.value))} />
             </div>
             <div className='flex_space'>
               <input type='number' placeholder='Adult(s)(18+)' />

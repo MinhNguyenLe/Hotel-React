@@ -27,6 +27,7 @@ import { listImagesHotel, listRoomImages } from "./utils"
 import Rooms from "./Components/Rooms"
 import ReviewForm from "Components/ReivewForm/ReviewForm"
 import Profile from "Components/Profile/Profile"
+import Checkout from "Components/Checkout/Checkout"
 
 function App() {
   const dispatch = useDispatch()
@@ -71,6 +72,8 @@ function App() {
           <Route path='/sign-in' component={Login} />
           <Route path='/Register' component={Register} />
           <Route path='/mypage' component={Profile} />
+          <Route path='/checkout' component={Checkout} />
+
         </Switch>
         <Footer />
       </Router>
