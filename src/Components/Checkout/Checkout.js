@@ -64,7 +64,9 @@ export default function Checkout() {
       ...JSON.parse(localStorage.getItem("infoBooking")),
       name: localStorage.getItem("name"),
       address: localStorage.getItem("address"),
-      cardNumber: localStorage.getItem("cardNumber")
+      cardNumber: localStorage.getItem("cardNumber"),
+      from: JSON.parse(localStorage.getItem("from")),
+      to: JSON.parse(localStorage.getItem("to")),
     }]
 
     localStorage.setItem("booked", oldBooked ? JSON.stringify([...oldBooked, ...booked]) : JSON.stringify(booked))
