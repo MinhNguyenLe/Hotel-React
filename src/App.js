@@ -28,6 +28,7 @@ import Rooms from "./Components/Rooms"
 import ReviewForm from "Components/ReivewForm/ReviewForm"
 import Profile from "Components/Profile/Profile"
 import Checkout from "Components/Checkout/Checkout"
+import Service from "Components/Service/Service"
 
 function App() {
   const dispatch = useDispatch()
@@ -73,6 +74,7 @@ function App() {
           <Route path='/Register' component={Register} />
           <Route path='/mypage' component={Profile} />
           <Route path='/checkout' component={Checkout} />
+          <Route path='/service' component={Service} />
 
         </Switch>
         <Footer />
